@@ -19,7 +19,7 @@ module.exports = (webpackConfig, reactAppSrcDir) => {
                 return false;
             }
 
-            if (!loader.loader.includes('node_modules/babel-loader')) {
+            if (!loader.loader.includes('node_modules/babel-loader') && !loader.loader.includes('node_modules/ts-loader')) {
                 return false;
             }
 
