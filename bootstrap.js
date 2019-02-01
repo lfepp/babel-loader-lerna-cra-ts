@@ -17,17 +17,17 @@ const config = require(path.join(__dirname, 'loadConfig'))();
 log('config =', config);
 
 const webpackConfigPath = (dir, type) => {
-    return path.join(dir, `node_modules/react-scripts/config/webpack.config.${type}.js`);
+    return path.join(dir, `node_modules/react-scripts-ts/config/webpack.config.${type}.js`);
 }
 
 const webpackBackupPath = (dir, type) => {
-    return path.join(dir, `node_modules/react-scripts/config/backup.webpack.config.${type}.js`);
+    return path.join(dir, `node_modules/react-scripts-ts/config/backup.webpack.config.${type}.js`);
 }
 
 const prettyAppPath = uglyPath => 
     path.parse(path.relative(config.lernaRoot, uglyPath)).dir
     .replace(/^packages\//, '')
-    .replace(/\/node_modules\/react-scripts\/config/, '');
+    .replace(/\/node_modules\/react-scripts-ts\/config/, '');
 
 const prettyFile = uglyPath => path.parse(uglyPath).base;
 
