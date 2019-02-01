@@ -1,4 +1,4 @@
-module.exports = (webpackConfig, reactAppSrcDir) => {
+module.exports = (webpackConfig) => {
     let loaderToOverride;
 
     webpackConfig.module.rules.forEach(rule => {
@@ -12,10 +12,6 @@ module.exports = (webpackConfig, reactAppSrcDir) => {
             }
 
             if (!loader.test.toString().includes('(js|mjs|jsx|ts|tsx)')) {
-                return false;
-            }
-
-            if (loader.include !== reactAppSrcDir) {
                 return false;
             }
 

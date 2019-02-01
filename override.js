@@ -7,8 +7,6 @@ const lernaRoot = require(path.join(__dirname, 'getLernaRoot'))();
 const lernaPackageJson = require(path.join(lernaRoot, 'package.json'));
 
 module.exports = (configDir, configFile) => {
-    const appDir = fs.realpathSync(process.cwd());
-    const reactAppSrcDir = path.resolve(appDir, 'src');
     const backupConfig = path.join(configDir, `backup.${path.parse(configFile).base}`);
 
     const settings = lernaPackageJson['babel-loader-lerna-cra-ts'];
@@ -24,9 +22,9 @@ module.exports = (configDir, configFile) => {
     console.log('config', config);
 
     const webpackConfig = require(backupConfig);
-    const loaderToOverride = findLoader(webpackConfig, reactAppSrcDir);
+    const loaderToOverride = findLoader(webpackConfig);
 
-    loaderToOverride.include = [...config.imports, reactAppSrcDir];
+    loaderToOverride.include = [loaderToOverride.include, ...config.imports];
 
     return webpackConfig;
 };
