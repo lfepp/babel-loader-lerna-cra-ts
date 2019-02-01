@@ -5,7 +5,7 @@ module.exports = () => {
     const lernaRoot = require(path.join(__dirname, 'getLernaRoot'))();
     const lernaPackageJson = require(path.join(lernaRoot, 'package.json'));
     
-    const settings = lernaPackageJson['babel-loader-lerna-cra'];
+    const settings = lernaPackageJson['babel-loader-lerna-cra-ts'];
     const appsGlob = path.join(lernaRoot, settings.apps);
     const importsGlob = path.join(lernaRoot, settings.imports);
     

@@ -1,4 +1,4 @@
-# babel-loader-lerna-cra
+# babel-loader-lerna-cra-ts
 
 > Transpile Create-React-App imports in Lerna projects.
 
@@ -8,7 +8,7 @@ This package overrides the Webpack configuration of Create-React-App projects in
 
 As with packages like [React-App-Rewired]...
 
-Using `babel-loader-lerna-cra` breaks the "guarantees" that Create React App provides. That is to say, you now "own" the configs. No support will be provided. Proceed with caution.
+Using `babel-loader-lerna-cra-ts` breaks the "guarantees" that Create React App provides. That is to say, you now "own" the configs. No support will be provided. Proceed with caution.
 
 **"Stuff can break**" — Dan Abramov https://twitter.com/dan_abramov/status/1045809734069170176
 
@@ -56,14 +56,14 @@ These errors show up because the Webpack config in your Create-React-App does no
 
 ## The Solution
 
-This module (`babel-loader-lerna-cra`) allows you to configure Webpack config overrides in your Lerna project's `package.json` file; allowing babel to transpile imported Lerna packages using `dev` and `prod`.
+This module (`babel-loader-lerna-cra-ts`) allows you to configure Webpack config overrides in your Lerna project's `package.json` file; allowing babel to transpile imported Lerna packages using `dev` and `prod`.
 
 ## Usage
 
-1. Install `babel-loader-lerna-cra` in your Lerna repo:
+1. Install `babel-loader-lerna-cra-ts` in your Lerna repo:
 
     ```shell
-    npm i -D babel-loader-lerna-cra
+    npm i -D babel-loader-lerna-cra-ts
     ```
 
 2. Configure the `package.json` in your Lerna root:
@@ -75,7 +75,7 @@ This module (`babel-loader-lerna-cra`) allows you to configure Webpack config ov
         "devDependencies": {
             "babel-learna-loader-cra": "*"
         },
-        "babel-loader-lerna-cra": {
+        "babel-loader-lerna-cra-ts": {
             "imports": "packages/comp-*/src",
             "apps":  "packages/*react-app*"
         }
@@ -90,7 +90,7 @@ This module (`babel-loader-lerna-cra`) allows you to configure Webpack config ov
     Note: you **MUST** complete step two first.
 
     ```shell
-    npx babel-loader-lerna-cra
+    npx babel-loader-lerna-cra-ts
     ```
 
     You should see this output:

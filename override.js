@@ -9,7 +9,7 @@ module.exports = (configDir, configFile) => {
     const reactAppSrcDir = path.join(configDir, '..', '..','..', 'src');
     const backupConfig = path.join(configDir, `backup.${path.parse(configFile).base}`);
 
-    const settings = lernaPackageJson['babel-loader-lerna-cra'];
+    const settings = lernaPackageJson['babel-loader-lerna-cra-ts'];
     const appsGlob = path.join(lernaRoot, settings.apps);
     const importsGlob = path.join(lernaRoot, settings.imports);
     
