@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 
 const webpackReplacementPath = path.join(__dirname, 'webpack.config.replacement.js');
 
-const strap = 'babel-lerna-loader-cra:';
+const strap = 'babel-lerna-loader-cra-ts:';
 
 const log = (msg, data) => {
     console.log(strap, msg, data || '');
