@@ -15,8 +15,24 @@ module.exports = (webpackConfig) => {
                 return false;
             }
 
-            if (!loader.loader.includes('node_modules/babel-loader') && !loader.loader.includes('node_modules/ts-loader')) {
+            if (!loader.loader.includes('node_modules/ts-loader') && !loader.loader.use) {
                 return false;
+            }
+
+            if (loader.loader.includes('node_modules/ts-loader')) {
+                loaderToOverride = loader;                
+            } else {
+                loader.loader.use.forEach(useLoader => {
+                    if (!useLoader.loader) {
+                        return false;
+                    }
+
+                    if (!useLoader.loader.includes('node_modules/ts-loader')) {
+                        return false;
+                    }
+
+                    loaderToOverride = loader;
+                });
             }
 
             loaderToOverride = loader;
