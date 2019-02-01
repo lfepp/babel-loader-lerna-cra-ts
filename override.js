@@ -6,7 +6,7 @@ const lernaRoot = require(path.join(__dirname, 'getLernaRoot'))();
 const lernaPackageJson = require(path.join(lernaRoot, 'package.json'));
 
 module.exports = (configDir, configFile) => {
-    const reactAppSrcDir = path.join(configDir, '..', '..','..', 'src');
+    const reactAppSrcDir = path.join(configDir, '..', '..','..');
     const backupConfig = path.join(configDir, `backup.${path.parse(configFile).base}`);
 
     const settings = lernaPackageJson['babel-loader-lerna-cra-ts'];
