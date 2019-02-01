@@ -18,7 +18,6 @@ module.exports = (configDir, configFile) => {
         imports: glob.sync(importsGlob)
     };
 
-    console.log('srcDir', reactAppSrcDir);
     console.log('config', config);
 
     const webpackConfig = require(backupConfig);
