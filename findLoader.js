@@ -20,9 +20,11 @@ module.exports = (webpackConfig) => {
             }
 
             if (loader.loader.includes('node_modules/ts-loader')) {
+                console.log('ts loader');
                 loaderToOverride = loader;                
             } else {
                 loader.loader.use.forEach(useLoader => {
+                    console.log('has use');
                     if (!useLoader.loader) {
                         return false;
                     }
@@ -31,7 +33,8 @@ module.exports = (webpackConfig) => {
                         return false;
                     }
 
-                    loaderToOverride = loader;
+                    console.log('useLoader', useLoader);
+                    loaderToOverride = useLoader;
                 });
             }
 
